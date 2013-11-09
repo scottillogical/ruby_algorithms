@@ -4,16 +4,18 @@
 
 
 def permute(string)
+  puts "starting permute on #{string}"
   return string if string.length == 0
   return string if string.length == 1
   return [string, string.reverse] if string.length == 2
   permutations = []
-
-  string.length.times do |i|
-    first = string[i]
-    rest = string[i..string.length]
-    rest.length.times do |ri|
-      permutations << rest.insert(ri, first)
+  first = string[0]
+  rest = string[1..string.length]
+  rest_perms = permute(rest)  # get permutations of the substring
+  rest_perms.each do |perm|
+    perm.length.times do |ri| # swap the non-permuted remaining char in for all permutation marbles
+      puts "inserting first: #{first}  into a perm: #{perm} result: #{perm.clone.insert(ri, first)}"
+      permutations << perm.clone.insert(ri, first)
     end
   end
   return permutations
