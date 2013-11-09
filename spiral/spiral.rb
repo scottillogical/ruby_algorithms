@@ -20,14 +20,12 @@ def spiral(height, width, start_row, start_col)
   end
 
   until(@results.length == @max_length) do 
-    puts "go up"
     # go up
     until(x==(start_row - distance)) 
       x -= 1
       store_result(m, x, y)
     end
 
-    puts "go left"
     # go left
     until(y==(start_col - distance)) 
       y -= 1
@@ -35,14 +33,12 @@ def spiral(height, width, start_row, start_col)
     end
 
     # go down
-    puts "go down"
     until(x==(start_row + distance)) 
       x += 1
       store_result(m, x, y)
     end
 
     # go right"
-    puts "go right"
     until(y==(start_col + distance)) 
       y += 1
       store_result(m, x, y)

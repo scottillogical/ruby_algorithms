@@ -3,7 +3,6 @@ def insertionSort(ar)
   puts ar.join(" ")
   i = 0;
   ar.each_with_index do |unsorted_char, i|
-    puts "unsorted_char #{ar[i]}"
     j = i -1
 
     if ar[i] > ar[j] and i > 0
@@ -14,13 +13,8 @@ def insertionSort(ar)
         puts "comparing sorted char #{ar[j-1]} to to unsorted_char #{ar[i]}"
         if unsorted_char > ar[j-1]
           temp = ar[i]
-          puts "temp #{temp}"
-          puts "i #{i}"
           ar.delete_at(i) 
-          puts "delete " + ar.join(" ")
           ar.insert(j, temp)
-          puts "insert " + ar.join(" ")
-          puts "position found to the right of #{ar[j-1]}"
         end
         j = j -1
       end
