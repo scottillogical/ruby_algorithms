@@ -1,8 +1,6 @@
 ## Evalute an arithmetic expression, bearing in mind order of operations
 #  ex:   eval_math("1 + 10 / 5 + 2 * 4") # 11
 
-require 'debugger'
-
 def eval_math(string)
   number_stack = []
   operator_stack = []
